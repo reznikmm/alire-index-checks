@@ -1,2 +1,3 @@
 # alire-index-checks
-Checks on submissions to Alire indexes
+
+Checks on submissions to Alire indexes.
