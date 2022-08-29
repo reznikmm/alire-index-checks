@@ -193,8 +193,8 @@ for file in $CHANGES; do
    else
       echo FETCHED SOURCE crate OK, deployed at $(alr get --dirname $milestone)
 
-      # Enter the deployment dir
-      cd $(alr get --dirname $milestone)
+      # Enter the deployment dir silencing any warnings
+      cd $(alr -q get --dirname $milestone)
 
       echo BUILD ENVIRONMENT
       alr printenv
