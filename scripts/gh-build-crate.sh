@@ -38,7 +38,9 @@ alr toolchain --disable-assistant
 # Show alr metadata
 alr version
 
-# Configure index
+# Configure local index. For the case where two consecutive tests are attempted
+# (e.g. macOS -/+ Homebrew), try to remove it first
+alr index --del local || echo "Local index not yet configured, not removing"
 alr index --name local --add ./index
 
 # Remove community index in case it has been added before
