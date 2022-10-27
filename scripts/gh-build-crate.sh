@@ -140,7 +140,7 @@ for file in $CHANGES; do
    if grep -iq 'origin: system' <<< $solution; then
       echo "UPDATING system repositories with sudo from user ${USERNAME:-unset} ($UID:-unset)..."
       type apt-get 2>/dev/null && sudo apt-get update || true
-      type pacman  2>/dev/null && sudo pacman -Syy    || true
+      type pacman  2>/dev/null && sudo rm -rf /var/cache/pacman/pkg/* && sudo pacman -Sy archlinux-keyring && sudo pacman -Su || true
    else
       echo No need to update system repositories
    fi
